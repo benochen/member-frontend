@@ -1,0 +1,189 @@
+
+div [class$="container"] {
+
+    display:block;
+    border-radius: 30px;
+    font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+    color:white;
+
+}
+
+table{
+    color:black;
+}
+
+.alert {
+    .card-content {
+        span {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-right:4px;
+        }
+        .material-icons {
+            font-size: 1.5em;
+            position: relative;
+            top: 5px;
+            margin-right: 0.5em;
+        }
+    }
+}
+
+
+.page_content{
+
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows:1fr minmax(65em,auto) 1fr;
+    grid-gap: 10px;
+
+}
+
+#container_login{
+
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows:1fr 1fr 1fr;
+
+}
+
+#login_content{
+
+    grid-row:2;
+    grid-column:2/2;
+    border:solid 1px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+    border-radius: 30px;
+    font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+#login_content > p{
+    display:block;
+
+}
+
+.header_content{
+    display:grid;
+    grid-template-columns: 0.1fr 0.90fr 0.1fr ;
+    grid-template-rows:1fr;
+}
+
+.header_title_content{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_logout_content{
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_logout_content > a{
+    text-decoration: none;
+    color:white;
+}
+.header_container{
+
+    margin:10px 10px 10px;
+    grid-row:1;
+    grid-column:1/-1;
+
+}
+.menu_container{
+    margin-left:10px;
+    grid-row:2;
+    grid-column:1/1;
+    background: #0071c5;
+
+
+}
+
+.menu_content{
+
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.vertical-menu {
+    width:auto;
+    grid-column:1;
+    grid-row:2/2;
+}
+
+.vertical-menu a {
+    background-color: #0071c5;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+
+
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #5E35B1;
+    color: white;
+}
+
+
+.header_logout_content{
+    background: #0071c5;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.header_title_content{
+    background: #0071c5;
+    border-top-left-radius:30px;
+    border-bottom-left-radius:30px;
+}
+.body_container{
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+.footer_container{
+    margin:10px 10px 10px;
+    grid-row:3;
+    grid-column: 1/-1;
+
+    background: #0071c5;
+}
+
+.header_icon_content{
+    background-image: url("https://www.ecreadys.fr/wp-content/uploads/2017/10/Logo_ECREA_dys_SANS_FOND-e1508019287784.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:0.7fr 0.9fr 0.7fr;
+    grid-template-rows: 3.5fr 2fr 2fr;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    grid-row:2/2;
+}
+
+.footer-content div{
+    grid-column:2/2;
+    grid-row:2/2;
+}

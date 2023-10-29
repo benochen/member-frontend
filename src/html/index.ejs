@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Membres list</title>
+
+</head>
+<body>
+
+
+<div class="page_content">
+
+    <div id="header_container" class="header_container">
+
+        <div class="header_content">
+            <div class="header_icon_content">
+
+            </div>
+            <div class="header_title_content">
+                <h2>Espace de gestion des membres</h2>
+            </div>
+            <div class="header_logout_content">
+
+                <a id="logout" href="#">
+                    <i   class="small material-icons">power_settings_new</i> logout
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="menu_container" class="menu_container">
+        <div class="menu_content">
+            <div class="menu_title">
+
+            </div>
+            <div class="vertical-menu">
+                <a href="#Home" class="active">
+                    <i class="tiny material-icons">home</i> Home
+                </a>
+                <a href="#Membres">
+                    <i class="tiny material-icons">group</i> Membres
+                </a>
+                <a href="#">
+                    <i class="tiny material-icons">euro_symbole</i>Dons
+                </a>
+                <a href="#">
+                    <i class="tiny material-icons">person</i> Mon profil
+                </a>
+                <a id="logout_menu" href="#"><i   class="tiny material-icons">power_settings_new</i> logout</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="body_container" class="body_container">
+        <div class="body-button-container">
+
+            <a id="add_modal" href="#modal1" class=" waves-effect waves-light btn modal-trigger"><i class="material-icons left">add</i>Create members</a>
+            <a class="waves-effect waves-light btn"><i class="material-icons left">file_download</i>export</a>
+            <a class="waves-effect waves-light btn">
+                <i class="material-icons left">file_upload</i>import</a>
+            </a>
+
+        </div>
+        <div id="alert_container" class="alert card red lighten-4 red-text text-darken-4">
+            <div class="card-content">
+                <p><i class="material-icons">report</i><span></span></p>
+            </div>
+        </div>
+
+        <table id="table_members" class="higlight centered">
+            <thead>
+            <tr>
+                <th>icon</th>
+                <th>nom</th>
+                <th>prénom</th>
+                <th>tel</th>
+                <th>mail</th>
+                <th>adresse</th>
+                <th>ville</th>
+                <th>code postale</th>
+                <th>autorisation RS</th>
+                <th>autorisation site web</th>
+                <th>autorisation press</th>
+                <th>cotisation</th>
+                <th>actions</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+    <div id="footer_container" class="footer_container">
+        <div class="footer-content">
+            <div>
+                <a href="#">Mentions légales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Conditions générales de vente</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="container_login" id="container_login">
+
+
+
+        <div id="login_content">
+            <p>
+                Ce site nécéssite que vous vous authentifiez avec votre compte Google.
+            </p>
+            <p>
+                <a id="openid" class="waves-effect waves-light btn"><i class="material-icons left">check</i>Authenticate with Google</a>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <form name="form_modal" id="form_modal" class="form_modal"  >
+
+            <label for="first_name">first name</label>
+            <input id="first_name" name="first_name" type="text"/>
+
+            <label for="last_name">last name</label>
+            <input name="last_name" type="text"/>
+
+            <label for="phone">phone</label>
+            <input name="phone" type="text"/>
+
+            <label for="mail">mail</label>
+            <input name="mail" type="text"/>
+
+            <label for="address">address</label>
+            <input name="adress" type="text"/>
+
+            <label for="code_postal">code</label>
+            <input name="code_postal" type="text"/>
+
+            <label for="site_aut">Autorise photo sur site web ? </label>
+
+            <select id="authorized_web" name="authorized_web" class="select">
+                <option value="non">non</option>
+                <option value="oui">oui</option>
+            </select>
+
+            <br/>
+            <label for="site_rs">Autorise photo sur Réseaux sociaux ? </label>
+
+            <select id="authorized_rs" name="authorized_rs"  class="select">
+                <option value="non">non</option>
+                <option value="oui">oui</option>
+            </select>
+            <br/>
+            <label for="site_press">Autorise photo dans la press ? </label>
+            <select id="authorized_press" name="authorized_press"  class="select">
+                <option value="non">non</option>
+                <option value="oui">oui</option>
+            </select>
+
+            <label for="cotisation">cotisation</label>
+            <input name="cotisation" type="text" value="30"/>
+
+        </form>
+
+
+        <div class="modal-footer">
+            <a id="valid" class="modal-close  waves-effect waves-light btn"><i class="material-icons left">check</i>Valid</a>
+            <a class="modal-close  waves-effect waves-light btn"><i class="material-icons left">close</i>Cancel</a>
+        </div>
+    </div>
+</div>
+<script>
+
+    try {
+        $('#modal1').modal();
+        console.log("modal intieialized")
+    } catch (e) {
+        console.info('loading modal auto-initialized..');
+    }
+
+</script>
+<script type="module" src="./public/bundle.js" charset="utf-8"></script>
+
+</body>
+</html>
