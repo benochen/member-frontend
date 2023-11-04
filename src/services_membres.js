@@ -1,5 +1,5 @@
 
-const api_url="https://membres.chenal.int:9000/membership/members"
+const api_url="https://api.membres.chenal.int:9000/membership/members"
 
 export  async function get_all_members(){
 
