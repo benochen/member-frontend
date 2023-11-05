@@ -11,9 +11,9 @@ export function start_auth() {
     let state=app_prefix+uuid()
     sessionStorage.setItem("state",state);
     let response_type="token id_token"
-    let scope= config.openidconnect_scope
-
-    let redirect_uri =config.openidconnect_redirct_uri
+    let scope=config.openidconnect_scope
+    console.log(scope)
+    let redirect_uri=config.openidconnect_redirct_uri
     let url_prefix=config.openidconnect_url_prefix
     let complete_url=url_prefix+"response_type="+response_type+"&client_id="+client_id+"&scope="+scope+"&redirect_uri="+redirect_uri+"&state="+state+"&nonce="+nonce
     console.log(complete_url)
