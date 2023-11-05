@@ -1,5 +1,5 @@
 import config from "./config";
-const api_url=config.api_url
+const api_url=config.api.api_url
 
 export  async function get_all_members(){
 

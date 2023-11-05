@@ -2,7 +2,7 @@ import {v4 as uuid} from "uuid";
 import * as jose from 'jose'
 
 import config from './config'
-const client_id=config.openidconnect_clientid
+const client_id=config.openid_connect.clientid
 export function start_auth() {
 
     console.log("start openid auth")
@@ -11,10 +11,10 @@ export function start_auth() {
     let state=app_prefix+uuid()
     sessionStorage.setItem("state",state);
     let response_type="token id_token"
-    let scope=config.openidconnect_scope
+    let scope=config.openid_connect.scope
     console.log(scope)
-    let redirect_uri=config.openidconnect_redirct_uri
-    let url_prefix=config.openidconnect_url_prefix
+    let redirect_uri=config.openid_connect.redirct_uri
+    let url_prefix=config.openid_connect.url_prefix
     let complete_url=url_prefix+"response_type="+response_type+"&client_id="+client_id+"&scope="+scope+"&redirect_uri="+redirect_uri+"&state="+state+"&nonce="+nonce
     console.log(complete_url)
     window.location.href = complete_url
@@ -66,15 +66,15 @@ function check_id_token(id_token){
 }
 
 async function verify_token(id_token){
-    const JWKS = jose.createRemoteJWKSet(new URL(config.openidconnect_certs));
+    const JWKS = jose.createRemoteJWKSet(new URL(config.openid_connect.certs));
     let authenticated={
         "authenticated":false,
         "message":""
     }
     try {
         const {payload, protectedHeader} = await jose.jwtVerify(id_token, JWKS, {
-            issuer: config.openidconnect_issuer,
-            audience: config.openidconnect_clientid
+            issuer: config.openid_connect.issuer,
+            audience: config.openid_connect.clientid
         })
         console.log(protectedHeader)
         console.log(payload)
