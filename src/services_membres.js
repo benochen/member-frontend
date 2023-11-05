@@ -1,5 +1,5 @@
-
-const api_url="https://api.membres.chenal.int:9000/membership/members"
+import config from "./config";
+const api_url=config.api_url
 
 export  async function get_all_members(){
 

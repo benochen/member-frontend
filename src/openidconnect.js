@@ -1,6 +1,8 @@
 import {v4 as uuid} from "uuid";
 import * as jose from 'jose'
-const client_id="697261480006-6onc6cb2jq2un380ein2oh1p4alqqi8s.apps.googleusercontent.com"
+
+import config from './config'
+const client_id=config.openidconnect_clientid
 export function start_auth() {
 
     console.log("start openid auth")
@@ -9,10 +11,10 @@ export function start_auth() {
     let state=app_prefix+uuid()
     sessionStorage.setItem("state",state);
     let response_type="token id_token"
-    let scope="openid%20email"
+    let scope= config.openidconnect_scope
 
-    let redirect_uri ="https://membres.chenal.int:8000/members"
-    let url_prefix="https://accounts.google.com/o/oauth2/v2/auth?"
+    let redirect_uri =config.openidconnect_redirct_uri
+    let url_prefix=config.openidconnect_url_prefix
     let complete_url=url_prefix+"response_type="+response_type+"&client_id="+client_id+"&scope="+scope+"&redirect_uri="+redirect_uri+"&state="+state+"&nonce="+nonce
     console.log(complete_url)
     window.location.href = complete_url
@@ -64,15 +66,15 @@ function check_id_token(id_token){
 }
 
 async function verify_token(id_token){
-    const JWKS = jose.createRemoteJWKSet(new URL('https://www.googleapis.com/oauth2/v3/certs'))
+    const JWKS = jose.createRemoteJWKSet(new URL(config.openidconnect_certs));
     let authenticated={
         "authenticated":false,
         "message":""
     }
     try {
         const {payload, protectedHeader} = await jose.jwtVerify(id_token, JWKS, {
-            issuer: 'https://accounts.google.com',
-            audience: '697261480006-6onc6cb2jq2un380ein2oh1p4alqqi8s.apps.googleusercontent.com',
+            issuer: config.openidconnect_issuer,
+            audience: config.openidconnect_clientid
         })
         console.log(protectedHeader)
         console.log(payload)
