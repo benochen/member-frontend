@@ -1,7 +1,6 @@
 import config from "./config";
 
 const api_url=config.api.api_url
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0
 
 
 export  async function get_all_members(){
