@@ -7,9 +7,6 @@ export  async function get_all_members(){
 
     try{
         let access_token=sessionStorage.getItem("ACCESS8TOKEN")
-        const agent = new https.Agent({
-            rejectUnauthorized: false
-        })
         let response= await fetch(api_url,{
             method:'GET',
             headers: {Authorization: 'Bearer '+ access_token}
