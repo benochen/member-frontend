@@ -1,5 +1,9 @@
 import './styles/main.css'
 import './styles/theme.scss'
+import * as Handlebars from 'handlebars';
+import * as path from 'path';
+import { compile } from 'handlebars'
+import template from './html/header.handlebars'
 
 import {
     populate_edit_form,
@@ -20,13 +24,16 @@ import 'material-icons/iconfont/material-icons.css';
 import $ from 'jquery'
 import 'bootstrap'
 import Navigo from 'navigo'
+const partial_path = path.join(".", partial);
+const { name } = path.parse(path.basename(partial_path));
+
+$("#header").html(compile(template));
 
 import HomePage from './home'
 import AboutPage from './about'
 import Members from './members'
 const router = new Navigo()
 
-$("#header").load("./html/partials/header.ejs");
 
 router
         .on('members', Members)
