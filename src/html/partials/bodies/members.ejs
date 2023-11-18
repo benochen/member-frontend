@@ -1,0 +1,123 @@
+<div id="body_container" class="body_container">
+    <div class="body-button-container">
+
+        <a id="add_modal" href="#modal1" class=" waves-effect waves-light btn modal-trigger"><i class="material-icons left">add</i>Create members</a>
+        <a class="waves-effect waves-light btn"><i class="material-icons left">file_download</i>export</a>
+        <a class="waves-effect waves-light btn">
+            <i class="material-icons left">file_upload</i>import</a>
+        </a>
+
+    </div>
+    <div id="alert_container" class="alert card red lighten-4 red-text text-darken-4">
+        <div class="card-content">
+            <p><i class="material-icons">report</i><span></span></p>
+        </div>
+    </div>
+
+    <table id="table_members" class="higlight centered">
+        <thead>
+        <tr>
+            <th>icon</th>
+            <th>nom</th>
+            <th>prénom</th>
+            <th>tel</th>
+            <th>mail</th>
+            <th>adresse</th>
+            <th>ville</th>
+            <th>code postale</th>
+            <th>autorisation RS</th>
+            <th>autorisation site web</th>
+            <th>autorisation press</th>
+            <th>cotisation</th>
+            <th>actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+
+
+        </tbody>
+
+    </table>
+
+
+</div>
+<div id="footer_container" class="footer_container">
+    <div class="footer-content">
+        <div>
+            <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Conditions générales de vente</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+</div>
+<div class="container_login" id="container_login">
+
+
+
+    <div id="login_content">
+        <p>
+            Ce site nécéssite que vous vous authentifiez avec votre compte Google.
+        </p>
+        <p>
+            <a id="openid" class="waves-effect waves-light btn"><i class="material-icons left">check</i>Authenticate with Google</a>
+        </p>
+    </div>
+</div>
+
+</div>
+
+
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <form name="form_modal" id="form_modal" class="form_modal"  >
+
+            <label for="first_name">first name</label>
+            <input id="first_name" name="first_name" type="text"/>
+
+            <label for="last_name">last name</label>
+            <input name="last_name" type="text"/>
+
+            <label for="phone">phone</label>
+            <input name="phone" type="text"/>
+
+            <label for="mail">mail</label>
+            <input name="mail" type="text"/>
+
+            <label for="address">address</label>
+            <input name="adress" type="text"/>
+
+            <label for="code_postal">code</label>
+            <input name="code_postal" type="text"/>
+
+            <label for="site_aut">Autorise photo sur site web ? </label>
+
+            <select id="authorized_web" name="authorized_web" class="select">
+                <option value="non">non</option>
+                <option value="oui">oui</option>
+            </select>
+
+            <br/>
+            <label for="site_rs">Autorise photo sur Réseaux sociaux ? </label>
+
+            <select id="authorized_rs" name="authorized_rs"  class="select">
+                <option value="non">non</option>
+                <option value="oui">oui</option>
+            </select>
+            <br/>
+            <label for="site_press">Autorise photo dans la press ? </label>
+            <select id="authorized_press" name="authorized_press"  class="select">
+                <option value="non">non</option>
+                <option value="oui">oui</option>
+            </select>
+
+            <label for="cotisation">cotisation</label>
+            <input name="cotisation" type="text" value="30"/>
+
+        </form>
+    </div>
+</div>

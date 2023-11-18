@@ -26,9 +26,7 @@ import AboutPage from './about'
 import Members from './members'
 const router = new Navigo()
 
-router
-    .on('members', Members)
-    .on('home',HomePage)
-    .resolve();
-
-
+    router
+        .on('members', Members)
+        .on('home', HomePage)
+        .resolve()
