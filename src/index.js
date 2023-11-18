@@ -26,7 +26,7 @@ import AboutPage from './about'
 import Members from './members'
 const router = new Navigo()
 
-$("#header").load("./html/partials.header.ejs");
+$("#header").load("./html/partials/header.ejs");
 
 router
         .on('members', Members)
