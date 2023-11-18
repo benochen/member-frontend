@@ -5,9 +5,6 @@ import * as path from 'path';
 import { compile } from 'handlebars'
 import template from './html/header.handlebars'
 
-import HomePage from './home'
-import AboutPage from './about'
-import Members from './members'
 import {
     populate_edit_form,
     authenticate,
@@ -26,15 +23,6 @@ import 'material-icons/iconfont/material-icons.css';
 
 import $ from 'jquery'
 import 'bootstrap'
-import Navigo from 'navigo'
 
 console.log("compile")
 //$("#header").html(compile(template));
-
-const router = new Navigo()
-
-
-//router
- //       .on('members', Members)
-   //     .on('home', HomePage)
-    //    .resolve()
