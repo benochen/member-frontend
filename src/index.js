@@ -1,7 +1,6 @@
 import './styles/main.css'
 import './styles/theme.scss'
 import * as Handlebars from 'handlebars';
-import * as path from 'path';
 import { compile } from 'handlebars'
 import template from './html/header.handlebars'
 
