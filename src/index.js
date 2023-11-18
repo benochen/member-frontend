@@ -25,4 +25,4 @@ import $ from 'jquery'
 import 'bootstrap'
 
 console.log("compile")
-//$("#header").html(compile(template));
+$("#header").html(compile(template));
