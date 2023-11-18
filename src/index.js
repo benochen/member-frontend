@@ -5,6 +5,9 @@ import * as path from 'path';
 import { compile } from 'handlebars'
 import template from './html/header.handlebars'
 
+import HomePage from './home'
+import AboutPage from './about'
+import Members from './members'
 import {
     populate_edit_form,
     authenticate,
@@ -28,13 +31,10 @@ import Navigo from 'navigo'
 
 $("#header").html(compile(template));
 
-import HomePage from './home'
-import AboutPage from './about'
-import Members from './members'
 const router = new Navigo()
 
 
-router
-        .on('members', Members)
-        .on('home', HomePage)
-        .resolve()
+//router
+ //       .on('members', Members)
+   //     .on('home', HomePage)
+    //    .resolve()
