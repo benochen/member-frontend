@@ -28,8 +28,8 @@ import $ from 'jquery'
 import 'bootstrap'
 import Navigo from 'navigo'
 
-
-$("#header").html(compile(template));
+console.log("compile")
+//$("#header").html(compile(template));
 
 const router = new Navigo()
 
