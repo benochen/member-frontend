@@ -24,8 +24,7 @@ import 'material-icons/iconfont/material-icons.css';
 import $ from 'jquery'
 import 'bootstrap'
 import Navigo from 'navigo'
-const partial_path = path.join(".", partial);
-const { name } = path.parse(path.basename(partial_path));
+
 
 $("#header").html(compile(template));
 
