@@ -4,7 +4,7 @@ import { compile } from 'handlebars'
 import template_header from './html/header.handlebars'
 import template_members from './html/members.handlebars'
 import template_footer from './html/footer.handlebars'
-
+import Members from "./members";
 import {
     populate_edit_form,
     authenticate,
@@ -26,6 +26,7 @@ import 'bootstrap'
 
 console.log("compile")
 $("#header").html(compile(template_header));
+Members()
 $("#body").html(compile(template_members));
 $("#footer").html(compile(template_footer));
 
