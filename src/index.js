@@ -30,6 +30,7 @@ console.log("compile ")
 $("#header").html(compile(template_header));
 
 Members()
+console.log("AUTHENTICATED="+check_authenticated())
 if (check_authenticated()){
 $("#body").html(compile(template_members));
 }else{
