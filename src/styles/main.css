@@ -2,7 +2,7 @@
 div [class$="container"] {
 
     display:block;
-    border-radius: 30px;
+    border-radius: 1px;
     font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
     color:white;
 
