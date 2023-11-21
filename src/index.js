@@ -28,8 +28,9 @@ import 'bootstrap'
 
 console.log("compile ")
 $("#header").html(compile(template_header));
-//Members()
-//$("#body").html(compile(template_members));
+
+$("#body").html(compile(template_members));
+Members()
 //$("#body").html(compile(template_login));
 //$("#footer").html(compile(template_footer));
 
