@@ -93,7 +93,7 @@ export function load_table_members(members,table_selector){
 export function check_authenticated(){
 
     let result=false
-    if (localStorage.getItem("ACCESS8TOKEN") == undefined ){
+    if (sessionStorage.getItem("ACCESS8TOKEN") == undefined ){
         return false;
     }else{
         return true;
