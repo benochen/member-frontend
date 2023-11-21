@@ -5,7 +5,7 @@ import template_header from './html/header.handlebars'
 import template_members from './html/members.handlebars'
 import template_footer from './html/footer.handlebars'
 import template_login from './html/login.handlebars'
-
+import {check_authenticated} from './utils'
 import Members from "./members";
 import {
     populate_edit_form,
@@ -29,9 +29,12 @@ import 'bootstrap'
 console.log("compile ")
 $("#header").html(compile(template_header));
 
-$("#body").html(compile(template_members));
 Members()
+if (check_authenticated()){
+$("#body").html(compile(template_members));
+}else{
 $("#body").html(compile(template_login));
+}
 //$("#footer").html(compile(template_footer));
 
 
