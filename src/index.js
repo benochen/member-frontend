@@ -31,7 +31,7 @@ $("#header").html(compile(template_header));
 
 $("#body").html(compile(template_members));
 Members()
-//$("#body").html(compile(template_login));
+$("#body").html(compile(template_login));
 //$("#footer").html(compile(template_footer));
 
 
