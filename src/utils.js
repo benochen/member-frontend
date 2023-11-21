@@ -93,16 +93,11 @@ export function load_table_members(members,table_selector){
 export function check_authenticated(){
 
     let result=false
-    if (localStorage.getItem("token") == undefined ){
+    if (localStorage.getItem("ACCESS8TOKEN") == undefined ){
         return false;
+    }else{
+        return true;
     }
-
-    let token=JSON.parse(localStorage.getItem("token"));
-
-    if (token.status=="VALID"){
-        result=true;
-    }
-    return result
 }
 
 export function init_token(){
