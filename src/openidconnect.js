@@ -46,8 +46,8 @@ export function check_identity_server_response(){
     console.log("state successfully checked")
 
     authenticated=check_id_token(searchParams.get("id_token"))
-    sessionStorage.setItem("ID_TOKEN",searchParams.get("id_token"))
-    sessionStorage.setItem("ACCESS8TOKEN",searchParams.get("access_token"))
+    sessionStorage.setItem("id_token",searchParams.get("id_token"))
+    sessionStorage.setItem("access_token",searchParams.get("access_token"))
     return authenticated
 
 
@@ -108,11 +108,4 @@ function check_state(state){
 
 }
 
-export function logout(){
-    sessionStorage.clear();
-    if (window.location.href.includes("#")){
-        window.location.href=window.location.href.split("#")[0]
-    }
-    window.location.href=window.location.href
-}
 

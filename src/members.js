@@ -12,31 +12,51 @@ import {check_identity_server_response, logout, start_auth} from "./openidconnec
 import {get_all_members} from "./services_membres";
 
 
+export function add_member() {
+
+    let first_name = $("input[name=first_name]").val()
+    let last_name = $("input[name=last_name]").val()
+    let phone = $("input[name=phone]").val()
+    console.log(phone)
+    let mail = $("input[name=mail]").val()
+    let adress = $("input[name=adress]").val()
+    let zip = $("input[name=code_postal]").val()
+    let authorization_rs = $("#authorized_rs option:selected").text()
+    console.log(authorization_rs)
+    let authorization_web = $("#authorized_web option:selected").text()
+    let authorization_press = $("#authorized_press option:selected").text()
+    let cotisation = $("input[name=cotisation]").val()
+    let action_col = "<td className='action_column'> <span class='action_column'> <a id='button_edit_10' href='#modal1' class='btn-floating btn-small btn-modal waves-effect waves-light red edit_10'><i class='material-icons'>edit</i></a> <a class='btn-floating btn-small waves-effect waves-light red remove_10'><i class='material-icons'>remove</i></a></span> </td></tr>"
+    let line_html = "<tr><td>bc</td><td>" + first_name + "</td><td>" + last_name + "</td><td>" + phone + "</td><td>" + mail + "</td><td>" + adress + "</td><td>" + zip + "</td><td>" + authorization_rs + "</td><td>" + authorization_web + "</td><td>" + authorization_press + "</td><td>" + cotisation + "</td>"
+    let line = line_html + action_col
+    console.log(line_html + action_col)
+    $("#table_members > tbody:last-child").append(line)
+
+}
+
+export async function display_members(){
+    let api_response = await get_all_members()
+    if ((api_response!=undefined)&&(api_response.hasOwnProperty("status")) && (api_response.status === 200)) {
+        console.log("On affiche les membres")
+        load_table_members(api_response, "table_members")
+    } else {
+        console.log("On affiche erreur")
+        if(api_response!=undefined) {
+            display_error(api_response.data, "alert_container")
+        }else{
+            display_error("error","alert_container")
+        }
+    }
+}
+
+
+
+
+/**
 export default (ctx, next) => {
 
     let authenticated = false;
 
-    function add_member() {
-
-        let first_name = $("input[name=first_name]").val()
-        let last_name = $("input[name=last_name]").val()
-        let phone = $("input[name=phone]").val()
-        console.log(phone)
-        let mail = $("input[name=mail]").val()
-        let adress = $("input[name=adress]").val()
-        let zip = $("input[name=code_postal]").val()
-        let authorization_rs = $("#authorized_rs option:selected").text()
-        console.log(authorization_rs)
-        let authorization_web = $("#authorized_web option:selected").text()
-        let authorization_press = $("#authorized_press option:selected").text()
-        let cotisation = $("input[name=cotisation]").val()
-        let action_col = "<td className='action_column'> <span class='action_column'> <a id='button_edit_10' href='#modal1' class='btn-floating btn-small btn-modal waves-effect waves-light red edit_10'><i class='material-icons'>edit</i></a> <a class='btn-floating btn-small waves-effect waves-light red remove_10'><i class='material-icons'>remove</i></a></span> </td></tr>"
-        let line_html = "<tr><td>bc</td><td>" + first_name + "</td><td>" + last_name + "</td><td>" + phone + "</td><td>" + mail + "</td><td>" + adress + "</td><td>" + zip + "</td><td>" + authorization_rs + "</td><td>" + authorization_web + "</td><td>" + authorization_press + "</td><td>" + cotisation + "</td>"
-        let line = line_html + action_col
-        console.log(line_html + action_col)
-        $("#table_members > tbody:last-child").append(line)
-
-    }
 
     function hide_form() {
         $(form_add).hide();
@@ -47,7 +67,7 @@ export default (ctx, next) => {
         $(form_add).hide();
 
     }
-
+/**
 
     $(document).ready(function () {
         $('select').formSelect();
@@ -62,7 +82,6 @@ export default (ctx, next) => {
         let authenticated_obj = {}
         console.log(authenticated)
         if (authenticated) {
-            load_app("body_container", "menu_content", "container_login", "table_members", "alert_container")
 
         } else {
             if (window.location.hash) {
@@ -186,5 +205,4 @@ export default (ctx, next) => {
             router.navigate($(e.target).attr('href'))
         })
     })
-
-}
+**/

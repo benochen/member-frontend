@@ -41,6 +41,12 @@ export async function authenticate(){
     return auth
 }
 
+export function hide_menu(menu_id){
+    console.log("hiding menuuuu")
+    $('.'+menu_id).css('display','none');
+    $('.menu_container').css('background-color','#FFFFFF');
+    $('#logout').css('display','none')
+}
 export function load_app(member_container,menu_container,login_container,table_selector,error_box_selector){
     $('#'+login_container).css('display','none');
     $('#'+member_container).css('display','block');
@@ -90,15 +96,7 @@ export function load_table_members(members,table_selector){
 }
 
 
-export function check_authenticated(){
 
-    let result=false
-    if (sessionStorage.getItem("ACCESS8TOKEN") == undefined ){
-        return false;
-    }else{
-        return true;
-    }
-}
 
 export function init_token(){
     let token={

@@ -6,7 +6,8 @@ const api_url=config.api.api_url
 export  async function get_all_members(){
 
     try{
-        let access_token=sessionStorage.getItem("ACCESS8TOKEN")
+        console.log("Start get all members")
+        let access_token=sessionStorage.getItem("access_token")
         let response= await fetch(api_url,{
             method:'GET',
             headers: {Authorization: 'Bearer '+ access_token}

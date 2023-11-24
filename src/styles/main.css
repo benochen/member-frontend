@@ -68,7 +68,7 @@ table{
 #header{
     display:grid;
     grid-template-columns: 0.1fr 0.90fr 0.1fr ;
-    grid-template-rows:1fr;
+    grid-template-rows:0.1fr 0.1fr;
 
 }
 .header_content{
@@ -108,6 +108,24 @@ table{
     background: #0071c5;
 
 
+}
+
+
+#import_button{
+    visibility:hidden;
+}
+
+#export_button{
+    visibility:hidden;
+}
+
+#add_modal{
+    visibility:hidden;
+}
+
+#body{
+    margin-left: 20px;
+    margin-top:30px;
 }
 
 .menu_content{
@@ -153,13 +171,6 @@ table{
     background: #0071c5;
     border-top-left-radius:30px;
     border-bottom-left-radius:30px;
-}
-.body_container{
-
-    display:flex;
-    align-items: center;
-    justify-content: center;
-
 }
 
 
