@@ -8,7 +8,7 @@ let config={
         "issuer":'https://accounts.google.com'
 },
     api:{
-        "api_url":"https://api.membres.chenal.int:9000/membership/members",
+        "api_url":"https://membres.api.chenal.org/membership/members",
     }
 }
 
