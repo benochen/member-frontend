@@ -96,6 +96,7 @@ if (!isProd) {
     config.devServer = {
         static:'./static',
         hot: true,
+        allowedHosts: "all",
         devMiddleware:{
         publicPath: '/'
         },
